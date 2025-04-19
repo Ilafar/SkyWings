@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_book_flight">
+
+    <fragment
+        android:id="@+id/nav_book_flight"
+        android:name="com.gametools.skywings.ui.book_flight.BookFlightFragment"
+        android:label="Book Flight"
+        tools:layout="@layout/fragment_book_flight" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.gametools.skywings.ui.search.SearchFragment"
+        android:label="Search Flight"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="com.gametools.skywings.ui.flight_info.FlightInfoFragment"
+        android:label="Flight Info"
+        tools:layout="@layout/fragment_flight_info" />
+    <fragment
+        android:id="@+id/nav_booking"
+        android:name="com.gametools.skywings.ui.bookings.BookingFragment"
+        android:label="Booking"
+        tools:layout="@layout/fragment_booking" />
+</navigation>
