@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
+    tools:context=".view.confirm_flight.ConfirmFlightFragment"
+    android:background="@color/md_theme_outlineVariant">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingVertical="16dp"
+        android:layout_weight="1.2"
+        android:background="@drawable/bg_appbar">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/ic_back"
+            app:navigationIconTint="@color/md_theme_primary"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm selected ticket"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:layout_marginStart="16dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_info"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@color/md_theme_outline"
+            android:layout_marginStart="16dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="2"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/bg_layout">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/img_app_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ticket"
+            style="@style/Widget.Material3.Chip.Assist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="J2 8103"
+            app:chipIcon="@drawable/img_menu_ticket"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraLarge" />
+
+        <Button
+            android:id="@+id/editButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:drawableLeft="@drawable/ic_edit"
+            android:drawableTint="@color/md_theme_outline"
+            android:padding="12dp"
+            android:text="Edit"
+            android:textColor="@color/md_theme_outline"
+            app:layout_constraintBottom_toBottomOf="@+id/ticket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ticket" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 Hour"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toTopOf="@+id/startHourText"
+            app:layout_constraintEnd_toEndOf="@+id/editButton"
+            app:layout_constraintStart_toStartOf="@+id/editButton"
+            app:layout_constraintTop_toBottomOf="@+id/editButton" />
+
+        <TextView
+            android:id="@+id/startHourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="07:20"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/startMonthText"
+            app:layout_constraintStart_toEndOf="@+id/materialDivider"
+            app:layout_constraintTop_toBottomOf="@+id/ticket" />
+
+        <TextView
+            android:id="@+id/startMonthText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sun, 28 Apr"
+            android:textColor="@color/md_theme_outline"
+            app:layout_constraintEnd_toStartOf="@+id/fromText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@id/endHourText"
+            app:layout_constraintStart_toStartOf="@+id/startHourText"
+            app:layout_constraintTop_toBottomOf="@+id/startHourText" />
+
+        <TextView
+            android:id="@+id/fromText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bakı"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/startHourText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@id/startHourText"
+            app:layout_constraintTop_toTopOf="@+id/startHourText" />
+
+        <TextView
+            android:id="@+id/fromText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İstanbul"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/endHourText"
+            app:layout_constraintStart_toStartOf="@+id/fromText"
+            app:layout_constraintTop_toTopOf="@+id/endHourText" />
+
+        <TextView
+            android:id="@+id/fromAirport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Heydər Əlivey Beynəlxalq Aeroportu"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/fromText"
+            app:layout_constraintTop_toBottomOf="@+id/fromText" />
+
+        <TextView
+            android:id="@+id/fromAirport2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Heydər Əlivey Beynəlxalq Aeroportu"
+            app:layout_constraintEnd_toEndOf="@+id/fromAirport"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/fromText2"
+            app:layout_constraintTop_toBottomOf="@+id/fromText2" />
+
+        <TextView
+            android:id="@+id/endHourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="09:20"
+            android:layout_marginTop="24dp"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toTopOf="@id/endMonthText"
+            app:layout_constraintEnd_toEndOf="@+id/startHourText"
+            app:layout_constraintStart_toStartOf="@+id/startHourText"
+            app:layout_constraintTop_toBottomOf="@+id/startMonthText" />
+
+        <TextView
+            android:id="@+id/endMonthText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sun, 28 Apr"
+            android:textColor="@color/md_theme_outline"
+            app:layout_constraintEnd_toStartOf="@+id/fromText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/endHourText"
+            app:layout_constraintTop_toBottomOf="@+id/endHourText" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/endMonthText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/startHourText" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:background="@drawable/bg_edittext_full"
+            android:padding="16dp"
+            android:text="Economy"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@color/md_theme_outline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/endMonthText" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bag"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_food"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.6"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="12dp"
+        android:background="@drawable/bg_layout"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shopping cart"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toTopOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 passengers"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider3"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="180 AZN"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="@+id/textView5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+            app:layout_constraintBottom_toTopOf="@+id/confirmButton"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider3"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider3" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="180 AZN"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider3"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

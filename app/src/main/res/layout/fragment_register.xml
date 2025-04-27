@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.register.RegisterFragment">
+    tools:context=".view.register.RegisterFragment">
 
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/app_logo"
+        android:src="@drawable/img_app_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,6 +21,7 @@
         android:layout_marginHorizontal="24dp"
         android:text="Register"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/register_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_logo"

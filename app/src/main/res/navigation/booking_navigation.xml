@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/booking_navigation"
+    app:startDestination="@id/flightsFragment2">
+
+    <fragment
+        android:id="@+id/flightsFragment2"
+        android:name="com.gametools.skywings.view.flights.FlightsFragment"
+        android:label="fragment_flights"
+        tools:layout="@layout/fragment_flights" >
+        <action
+            android:id="@+id/action_flightsFragment2_to_confirmFlightFragment"
+            app:destination="@id/confirmFlightFragment"
+            app:exitAnim="@anim/fade_out"
+            app:enterAnim="@anim/slide_in"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/confirmFlightFragment"
+        android:name="com.gametools.skywings.view.confirm_flight.ConfirmFlightFragment"
+        android:label="ConfirmFlightFragment" >
+        <action
+            android:id="@+id/action_confirmFlightFragment_to_passengerFragment"
+            app:destination="@id/passengerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passengerFragment"
+        android:name="com.gametools.skywings.view.passenger.PassengerFragment"
+        android:label="fragment_passenger"
+        tools:layout="@layout/fragment_passenger" >
+        <action
+            android:id="@+id/action_passengerFragment_to_seatSelectionDialog"
+            app:destination="@id/seatSelectionDialog" />
+    </fragment>
+    <dialog
+        android:id="@+id/seatSelectionDialog"
+        android:name="com.gametools.skywings.view.seat.SeatSelectionDialog"
+        android:label="fragment_seat_dialog"
+        tools:layout="@layout/fragment_seat_dialog" />
+</navigation>

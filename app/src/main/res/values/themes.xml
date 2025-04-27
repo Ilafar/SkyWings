@@ -1,6 +1,7 @@
 <resources>
     <style name="Theme.SkyWings" parent="Theme.Material3.Light.NoActionBar">
         <item name="materialButtonStyle">@style/Widget.Material3.Button.Custom</item>
+        <item name="fontFamily">@font/nunito_regular</item>
 
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>

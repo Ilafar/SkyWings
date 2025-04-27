@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.buy.BuyFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/img_app_logo"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/fromEditText"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sky "
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:textColor="@color/md_theme_primaryContainer_highContrast"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wings"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:textColor="@color/md_theme_primary"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/fromEditText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+
+    <EditText
+        android:id="@+id/fromEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/bg_edittext_top"
+        android:hint="From"
+        android:textColorHint="@color/md_theme_outline"
+        android:padding="24dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/toEditText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/materialDivider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toEditText"
+        app:layout_constraintEnd_toEndOf="@+id/fromEditText"
+        app:layout_constraintStart_toStartOf="@+id/fromEditText"
+        app:layout_constraintTop_toTopOf="@+id/fromEditText" />
+
+    <EditText
+        android:id="@+id/toEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_edittext_bottom"
+        android:hint="To"
+        android:textColorHint="@color/md_theme_outline"
+        android:padding="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/dateEditText"
+        app:layout_constraintEnd_toEndOf="@+id/fromEditText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/fromEditText"
+        app:layout_constraintTop_toBottomOf="@+id/fromEditText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dateEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_edittext_full"
+        android:drawableEnd="@drawable/ic_calendar"
+        android:hint="Flight date"
+        android:textColorHint="@color/md_theme_onPrimaryContainer"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/passengersEditText"
+        app:layout_constraintEnd_toEndOf="@+id/fromEditText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/fromEditText"
+        app:layout_constraintTop_toBottomOf="@+id/toEditText" />
+
+    <EditText
+        android:id="@+id/passengersEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_edittext_full"
+        android:hint="Passenger count"
+        android:inputType="number"
+        android:textColorHint="@color/md_theme_outline"
+        android:padding="16dp"
+        android:drawableEnd="@drawable/ic_passenger"
+        app:layout_constraintBottom_toTopOf="@id/searchTickets"
+        app:layout_constraintEnd_toEndOf="@+id/fromEditText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/fromEditText"
+        app:layout_constraintTop_toBottomOf="@+id/dateEditText" />
+
+    <Button
+        android:id="@+id/searchTickets"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="Search tickets"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintEnd_toEndOf="@+id/passengersEditText"
+        app:layout_constraintStart_toStartOf="@+id/passengersEditText"
+        app:layout_constraintTop_toBottomOf="@+id/passengersEditText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

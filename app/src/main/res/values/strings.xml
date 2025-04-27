@@ -12,4 +12,5 @@
     <string name="menu_slideshow">Slideshow</string>
     <string name="login_info">Log in to your account for booking flights</string>
     <string name="register_info">Sign up for booking flights</string>
+    <string name="confirm_info">If the tickets you have selected are displayed correctly, click on the \"Confirm\" button</string>
 </resources>

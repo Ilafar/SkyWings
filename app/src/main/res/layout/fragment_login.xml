@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login.LoginFragment">
+    tools:context=".view.login.LoginFragment">
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="80dp"
-        android:src="@drawable/app_logo"
+        android:src="@drawable/img_app_logo"
+        app:layout_constraintBottom_toTopOf="@id/text_login"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/text_login"
@@ -21,9 +22,11 @@
         android:layout_marginHorizontal="24dp"
         android:text="Login"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@id/login_info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintWidth_max="488dp" />
 
     <TextView
@@ -33,6 +36,7 @@
         android:layout_marginTop="12dp"
         android:text="@string/login_info"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/emailLayout"
         app:layout_constraintEnd_toEndOf="@+id/text_login"
         app:layout_constraintStart_toStartOf="@+id/text_login"
         app:layout_constraintTop_toBottomOf="@+id/text_login"
@@ -42,20 +46,20 @@
         android:id="@+id/emailLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
         android:layout_marginBottom="16dp"
-        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginTop="24dp"
+        android:hint="Email"
         app:layout_constraintBottom_toTopOf="@+id/passwordLayout"
         app:layout_constraintEnd_toEndOf="@+id/login_info"
         app:layout_constraintStart_toStartOf="@+id/login_info"
         app:layout_constraintTop_toBottomOf="@+id/login_info"
-        android:hint="Email">
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_email"
-            android:drawablePadding="8dp"/>
+            android:drawablePadding="8dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -73,16 +77,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_password"
-            android:drawablePadding="8dp"/>
+            android:drawablePadding="8dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/password_toggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_eye_closed"
         android:layout_margin="12dp"
         android:paddingTop="4dp"
+        android:src="@drawable/ic_eye_closed"
         app:layout_constraintBottom_toBottomOf="@+id/passwordLayout"
         app:layout_constraintEnd_toEndOf="@+id/passwordLayout"
         app:layout_constraintTop_toTopOf="@+id/passwordLayout" />
@@ -95,7 +99,7 @@
         android:layout_marginTop="8dp"
         android:padding="3dp"
         android:text="Forget password"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
         app:layout_constraintEnd_toEndOf="@+id/passwordLayout"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 
@@ -104,27 +108,27 @@
         android:id="@+id/buttonSignIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Log In"
         android:padding="12dp"
+        android:layout_marginTop="32dp"
+        android:text="Log In"
         android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintBottom_toTopOf="@+id/do_not_have_account"
         app:layout_constraintEnd_toEndOf="@+id/login_info"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/login_info"
-        app:layout_constraintTop_toBottomOf="@+id/forget_password"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/forget_password" />
 
     <TextView
         android:id="@+id/do_not_have_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:paddingVertical="8dp"
         android:text="Do not have account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/register"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSignIn" />
 
     <Button
         android:id="@+id/register"
@@ -138,12 +142,4 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/do_not_have_account"
         app:layout_constraintTop_toTopOf="@+id/do_not_have_account" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

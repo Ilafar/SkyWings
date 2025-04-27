@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/md_theme_onPrimary"
+    android:layout_marginTop="16dp"
+    app:cardElevation="0dp"
+    app:cardCornerRadius="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/img_app_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ticket"
+            style="@style/Widget.Material3.Chip.Assist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="J2 8103"
+            app:chipIcon="@drawable/img_menu_ticket"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.ExtraLarge" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="3 Hour"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/ticket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ticket" />
+
+        <TextView
+            android:id="@+id/startHourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="07:20"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toTopOf="@id/startMonthText"
+            app:layout_constraintStart_toEndOf="@+id/materialDivider"
+            app:layout_constraintTop_toBottomOf="@+id/ticket" />
+
+        <TextView
+            android:id="@+id/startMonthText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sun, 28 Apr"
+            android:textColor="@color/md_theme_outline"
+            app:layout_constraintEnd_toStartOf="@+id/fromText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@id/endHourText"
+            app:layout_constraintStart_toStartOf="@+id/startHourText"
+            app:layout_constraintTop_toBottomOf="@+id/startHourText" />
+
+        <TextView
+            android:id="@+id/fromText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bakı"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/startHourText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toEndOf="@id/startHourText"
+            app:layout_constraintTop_toTopOf="@+id/startHourText" />
+
+        <TextView
+            android:id="@+id/fromText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İstanbul"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toBottomOf="@+id/endHourText"
+            app:layout_constraintStart_toStartOf="@+id/fromText"
+            app:layout_constraintTop_toTopOf="@+id/endHourText" />
+
+        <TextView
+            android:id="@+id/fromAirport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Heydər Əlivey Beynəlxalq Aeroportu"
+            app:layout_constraintEnd_toEndOf="@+id/textView6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/fromText"
+            app:layout_constraintTop_toBottomOf="@+id/fromText" />
+
+        <TextView
+            android:id="@+id/fromAirport2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Heydər Əlivey Beynəlxalq Aeroportu"
+            app:layout_constraintEnd_toEndOf="@+id/fromAirport"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/fromText2"
+            app:layout_constraintTop_toBottomOf="@+id/fromText2" />
+
+        <TextView
+            android:id="@+id/endHourText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="09:20"
+            android:layout_marginTop="24dp"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            app:layout_constraintBottom_toTopOf="@id/endMonthText"
+            app:layout_constraintEnd_toEndOf="@+id/startHourText"
+            app:layout_constraintStart_toStartOf="@+id/startHourText"
+            app:layout_constraintTop_toBottomOf="@+id/startMonthText" />
+
+        <TextView
+            android:id="@+id/endMonthText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sun, 28 Apr"
+            android:textColor="@color/md_theme_outline"
+            app:layout_constraintEnd_toStartOf="@+id/fromText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/endHourText"
+            app:layout_constraintTop_toBottomOf="@+id/endHourText" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="4dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/endMonthText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/startHourText" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/fromAirport2"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider"
+            app:layout_constraintTop_toBottomOf="@id/endMonthText" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/economy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/business"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider2"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="ECONOMY"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:textColor="@color/md_theme_primary"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next"
+                    app:drawableTint="@color/md_theme_primary" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="425 AZN"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textColor="@color/md_theme_primary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/business"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/economy"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider2"
+            app:layout_constraintStart_toEndOf="@+id/economy"
+            app:layout_constraintTop_toTopOf="@+id/economy">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/md_theme_primary"
+                    android:padding="16dp"
+                    android:text="BUSINESS"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:textColor="@color/md_theme_onPrimary"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_next"
+                    app:drawableTint="@color/md_theme_onPrimary" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="425 AZN"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textColor="@color/md_theme_primary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

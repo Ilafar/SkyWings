@@ -3,28 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_book_flight">
+    app:startDestination="@id/nav_buy">
 
     <fragment
-        android:id="@+id/nav_book_flight"
-        android:name="com.gametools.skywings.ui.book_flight.BookFlightFragment"
-        android:label="Book Flight"
-        tools:layout="@layout/fragment_book_flight" />
+        android:id="@+id/nav_buy"
+        android:name="com.gametools.skywings.view.buy.BuyFragment"
+        tools:layout="@layout/fragment_buy" />
 
     <fragment
-        android:id="@+id/nav_search"
-        android:name="com.gametools.skywings.ui.search.SearchFragment"
-        android:label="Search Flight"
-        tools:layout="@layout/fragment_search" />
+        android:id="@+id/nav_my_flights"
+        android:name="com.gametools.skywings.view.my_flights.MyFlightFragment"
+        tools:layout="@layout/fragment_my_flights" />
 
     <fragment
-        android:id="@+id/nav_info"
-        android:name="com.gametools.skywings.ui.flight_info.FlightInfoFragment"
-        android:label="Flight Info"
-        tools:layout="@layout/fragment_flight_info" />
+        android:id="@+id/nav_history"
+        android:name="com.gametools.skywings.view.history.HistoryFragment"
+        tools:layout="@layout/fragment_history" />
     <fragment
-        android:id="@+id/nav_booking"
-        android:name="com.gametools.skywings.ui.bookings.BookingFragment"
-        android:label="Booking"
-        tools:layout="@layout/fragment_booking" />
+        android:id="@+id/nav_profile"
+        android:name="com.gametools.skywings.view.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_nav_profile_to_galleryDialogFragment"
+            app:destination="@id/galleryDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/galleryDialogFragment"
+        android:name="com.gametools.skywings.view.galleryDialog.GalleryDialogFragment"
+        android:label="fragment_gallery_dialog"
+        tools:layout="@layout/fragment_gallery_dialog" />
 </navigation>

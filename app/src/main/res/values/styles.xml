@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Widget.Material3.Button.Custom" parent="Widget.Material3.Button">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Medium</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Material3.Corner.Large</item>
         <item name="android:padding">16dp</item>
     </style>
 </resources>
