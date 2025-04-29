@@ -20,7 +20,7 @@ class AuthActivity : AppCompatActivity() {
             insets
         }
         val sharedPref = getSharedPreferences("settings", Context.MODE_PRIVATE)
-        val darkMode = sharedPref.getBoolean("darkMode",true)
+        val darkMode = sharedPref.getBoolean("darkMode",false)
         Log.d("AuthActivity", "onCreate: $darkMode")
 
         if (darkMode)

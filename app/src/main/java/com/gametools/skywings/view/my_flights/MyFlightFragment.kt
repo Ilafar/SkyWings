@@ -4,17 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.gametools.skywings.adapters.MyFlightsAdapter
 import com.gametools.skywings.databinding.FragmentMyFlightsBinding
 
 class MyFlightFragment : Fragment() {
 
     private var _binding: FragmentMyFlightsBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,16 +19,12 @@ class MyFlightFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val myFlightViewModel =
-            ViewModelProvider(this).get(MyFlightViewModel::class.java)
-
+        val myFlightViewModel = ViewModelProvider(this)[MyFlightViewModel::class.java]
         _binding = FragmentMyFlightsBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        myFlightViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        binding.recyclerMyFlights.adapter = MyFlightsAdapter()
+
+        val root: View = binding.root
         return root
     }
 

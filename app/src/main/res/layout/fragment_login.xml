@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="3dp"
-        android:text="Forget password"
+        android:text="forgot password?"
         app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
         app:layout_constraintEnd_toEndOf="@+id/passwordLayout"
         app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
@@ -123,20 +123,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="8dp"
-        android:text="Do not have account"
+        android:text="Do not have account? "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/register"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonSignIn" />
 
-    <Button
+    <TextView
         android:id="@+id/register"
-        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:padding="0dp"
         android:text="Register"
+        android:textColor="@color/md_theme_primary"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/do_not_have_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"

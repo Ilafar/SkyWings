@@ -1,15 +1,19 @@
 package com.gametools.skywings.view.galleryDialog
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.gametools.skywings.databinding.FragmentGalleryDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -19,9 +23,9 @@ class GalleryDialogFragment : BottomSheetDialogFragment() {
 
     private var _binding: FragmentGalleryDialogBinding? = null
     private val binding get() = _binding!!
-    private lateinit var takePicture: ActivityResultLauncher<Intent>
+    private lateinit var takePicture: ActivityResultLauncher<Uri>
     private lateinit var getContent: ActivityResultLauncher<Intent>
-    private val bundle = Bundle()
+    private lateinit var requestCameraPermissionLauncher: ActivityResultLauncher<String>
 
     companion object{
         var selectedImageUri: Uri? = null
@@ -29,6 +33,13 @@ class GalleryDialogFragment : BottomSheetDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        requestCameraPermissionLauncher =
+            registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
+                if (isGranted)
+                    openCamera()
+            }
+
         getContent = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
@@ -37,8 +48,10 @@ class GalleryDialogFragment : BottomSheetDialogFragment() {
             dismiss()
         }
 
-        takePicture = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            dismiss()
+        takePicture = registerForActivityResult(ActivityResultContracts.TakePicture()) {isSuccess ->
+            if (isSuccess) {
+                dismiss()
+            }
         }
     }
 
@@ -52,22 +65,25 @@ class GalleryDialogFragment : BottomSheetDialogFragment() {
             openGallery()
         }
         binding.takePhoto.setOnClickListener {
-            openCamera()
+            requestCameraPermission()
         }
         return binding.root
 
     }
-
     private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         getContent.launch(intent)
     }
 
-
     private fun openCamera() {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, createImageUri())
-        takePicture.launch(takePictureIntent)
+        takePicture.launch(createImageUri())
+    }
+    private fun requestCameraPermission() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
+            == PackageManager.PERMISSION_GRANTED)
+                openCamera()
+        else
+                Toast.makeText(requireContext(), "Permission Denied", Toast.LENGTH_SHORT).show()
     }
 
     private fun createImageUri(): Uri {

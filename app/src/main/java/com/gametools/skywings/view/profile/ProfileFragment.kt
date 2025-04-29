@@ -37,6 +37,7 @@ class ProfileFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        binding.photo.setImageURI(null)
         binding.photo.setImageURI(GalleryDialogFragment.selectedImageUri)
     }
 
